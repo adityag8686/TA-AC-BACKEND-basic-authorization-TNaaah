@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <%include partials/header%>
+  <body>
+    <main>
+      <section class="container podcasts-sec">
+        <%podcasts.forEach(ele => {%>
+        <article class="each-podcast center flex relative">
+          <audio class="audio" controls>
+            <source src="" />
+          </audio>
+          <img
+            class="full-width"
+            src=""
+            alt="podcast-image"
+          />
+          <div class="single flex">
+            <a href="/podcast/<%=ele.id%>"><%=ele.title%></a>
+            <p><span>By:</span> <%= ele.artist%></p>
+          </div>
+          <span><%=ele.category %> </span>
+        </article>
+        <%})%>
+        <a href="/podcast/new" class="add-btn">Add Podcast</a>
+      </section>
+    </main>
+  </body>
+</html>
