@@ -13,7 +13,7 @@ var userSchema = new Schema({
 });
 
 userSchema.pre('save', function (next) {
-  if (this.email && this.email === 'vasant.saraswat@gmail.com') {
+  if (this.email && this.email === 'aditya.goswami@gmail.com') {
     this.isAdmin = true;
   }
   if (this.password) {
